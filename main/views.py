@@ -1,8 +1,19 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def index(requset):
-    return render(requset, 'main/index.html')
+    data = {
+        'title': 'Main page',
+        'values': ['Some', 'Hello', '123'],
+        'obj': {
+            'car': 'BMW',
+            'age': 18,
+            'hobby': 'Football'
+        }
+    }
+    return render(requset, 'main/index.html', data)
+
 
 def about(request):
     return render(request, 'main/about.html')
